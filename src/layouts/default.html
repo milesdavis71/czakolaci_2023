@@ -1,19 +1,63 @@
-{{!-- This is the base layout for your project, and will be used on every page unless specified. --}}
+{{!-- This is the base layout for your project, and will be used on every page. --}}
 
 <!doctype html>
 <html class="no-js" lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Foundation for Sites</title>
-    <link rel="stylesheet" href="{{root}}assets/css/app.css">
-  </head>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dr. med. habil. Czakó László, Ph.D.</title>
+  <link rel="shortcut icon" type="image/x-icon" href="{{root}}assets/img/favicon.ico" />
+  <link rel="stylesheet" href="{{root}}assets/css/app.css">
+</head>
+
 <body>
 
-{{!-- Pages you create in the src/pages/ folder are inserted here when the flattened page is created. --}}
-{{> body}}
+  {{!-- Pages you create in the src/pages/ folder are inserted here when the flattened page is created. --}}
+  {{#ifpage 'elerhetoseg'}}
+  {{> header_elerhetoseg}}
+  {{/ifpage}}
+  {{#ifpage 'fotok'}}
+  {{> header_fotok}}
+  {{/ifpage}}
+  {{#ifpage 'index'}}
+  {{> header_index}}
+  {{/ifpage}}
+  {{#ifpage 'oneletrajz'}}
+  {{> header_oneletrajz}}
+  {{/ifpage}}
+  {{#ifpage 'publikaciok'}}
+  {{> header_publikaciok}}
+  {{/ifpage}}
 
-<script src="{{root}}assets/js/app.js"></script>
+
+  {{#ifpage 'contact'}}
+  {{> header_contact}}
+  {{/ifpage}}
+  {{#ifpage 'photos'}}
+  {{> header_photos}}
+  {{/ifpage}}
+  {{#ifpage 'index_eng'}}
+  {{> header_index_eng}}
+  {{/ifpage}}
+  {{#ifpage 'curriculum'}}
+  {{> header_curriculum}}
+  {{/ifpage}}
+  {{#ifpage 'publications'}}
+  {{> header_publications}}
+  {{/ifpage}}
+
+  {{> close}}
+
+
+
+  {{> body}}
+
+
+
+
+  <script src="{{root}}assets/js/app.js"></script>
 </body>
+
 </html>
